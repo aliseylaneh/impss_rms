@@ -5,7 +5,6 @@ from common.db.basic import Logged
 
 class RequestStateChoices(models.TextChoices):
     STARTING = "ST", _("Starting")
-
     COMPLETED = "CO", _("Completed")
 
 
