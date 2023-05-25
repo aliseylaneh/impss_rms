@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Implemented Applications
+    'request'
 ]
 
 MIDDLEWARE = [
@@ -116,7 +118,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale')
+    [os.path.join(BASE_DIR, 'locale'), ]
 )
 LANGUAGES = (
     (u'en', u'English'),
