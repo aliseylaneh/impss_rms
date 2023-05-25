@@ -1,5 +1,4 @@
 from django.contrib import admin
-from common.admin_registery.admin import DefaultAdminMixin
 
 from request.models import Request
 from fsm_admin.mixins import FSMTransitionMixin
@@ -8,7 +7,7 @@ from fsm_admin.mixins import FSMTransitionMixin
 # Register your models here.
 
 @admin.register(Request)
-class RequestAdmin(FSMTransitionMixin, DefaultAdminMixin, admin.ModelAdmin):
+class RequestAdmin(FSMTransitionMixin, admin.ModelAdmin):
     fsm_field = ['state', ]
     list_display = ["id", "provincial_organization", "provincial_prison", "state"]
     search_fields = ["id", "provincial_organization", "provincial_prison"]

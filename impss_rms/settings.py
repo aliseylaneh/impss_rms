@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # FSM
+    'fsm_admin',
+    'django_fsm_log',
     # Implemented Applications
     'request'
 ]
