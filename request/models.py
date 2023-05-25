@@ -1,6 +1,7 @@
 from django.db import models
 from django_fsm import FSMField
 from common.db.basic import Logged
+from django.utils.translation import gettext as _
 
 
 class RequestStateChoices(models.TextChoices):
