@@ -8,8 +8,8 @@ from fsm_admin.mixins import FSMTransitionMixin
 # Register your models here.
 
 @admin.register(Request)
-class OrderPaymentTransactionAdmin(FSMTransitionMixin, DefaultAdminMixin, admin.ModelAdmin):
+class RequestAdmin(FSMTransitionMixin, DefaultAdminMixin, admin.ModelAdmin):
     fsm_field = ['state', ]
-    list_display = ["order_id", "national_code", "entity_id", "amount", "state", "phone_number"]
-    search_fields = ["entity_id", "order_id", "national_code", "phone_number"]
-    list_filter = ["type", "state"]
+    list_display = ["id", "provincial_organization", "provincial_prison", "state"]
+    search_fields = ["id", "provincial_organization", "provincial_prison"]
+    list_filter = ["id", "state"]
