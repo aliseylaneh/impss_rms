@@ -5,7 +5,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 class RequestStateChoices(models.TextChoices):
-    STARTING = "ST", _("Starting")
+    STARTING = "CT", _("Created")
+    PROCESSING = "PR", _("Processing")
     COMPLETED = "CO", _("Completed")
 
 
