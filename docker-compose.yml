@@ -1,0 +1,22 @@
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=rms
+      - POSTGRES_USER=app_impss
+      - POSTGRES_PASSWORD=03f2d3026c
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=rms
+      - POSTGRES_USER=app_impss
+      - POSTGRES_PASSWORD=03f2d3026c
+    depends_on:
+      - db
